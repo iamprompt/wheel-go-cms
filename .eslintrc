@@ -1,3 +1,4 @@
 {
-  "extends": ["next", "plugin:prettier/recommended"]
+  "extends": ["next", "plugin:prettier/recommended"],
+  "ignorePatterns": ["generated-types.ts"]
 }
