@@ -1,4 +1,5 @@
 import { useEffect, useState, type FC } from 'react'
+
 import { Icon } from '@iconify/react'
 import {
   Group,
@@ -8,8 +9,8 @@ import {
   Select,
   Switch,
   Text,
-  TextInput,
   Textarea,
+  TextInput,
 } from '@mantine/core'
 import { Dropzone, IMAGE_MIME_TYPE, type FileWithPath } from '@mantine/dropzone'
 import { useForm } from '@mantine/form'
@@ -272,8 +273,8 @@ export const PlaceForm: FC<PlaceFormProps> = ({
         withCloseButton={false}
         centered
       >
-        <div className="text-title-l text-info-400 mb-4 mt-2 flex items-center justify-center gap-2">
-          <Icon icon="ep:success-filled" className="text-info-400 h-6 w-6" />
+        <div className="mb-4 mt-2 flex items-center justify-center gap-2 text-title-l text-info-400">
+          <Icon icon="ep:success-filled" className="h-6 w-6 text-info-400" />
           {t('save_draft_success')}
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -293,8 +294,8 @@ export const PlaceForm: FC<PlaceFormProps> = ({
         withCloseButton={false}
         centered
       >
-        <div className="text-title-l text-success-400 mb-4 mt-2 flex items-center justify-center gap-2">
-          <Icon icon="ep:success-filled" className="text-success-400 h-6 w-6" />
+        <div className="mb-4 mt-2 flex items-center justify-center gap-2 text-title-l text-success-400">
+          <Icon icon="ep:success-filled" className="h-6 w-6 text-success-400" />
           {t('publish_success')}
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -314,8 +315,8 @@ export const PlaceForm: FC<PlaceFormProps> = ({
         withCloseButton={false}
         centered
       >
-        <div className="text-title-l text-success-400 mb-4 mt-2 flex items-center justify-center gap-2">
-          <Icon icon="ep:success-filled" className="text-success-400 h-6 w-6" />
+        <div className="mb-4 mt-2 flex items-center justify-center gap-2 text-title-l text-success-400">
+          <Icon icon="ep:success-filled" className="h-6 w-6 text-success-400" />
           {t('save_success')}
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -341,8 +342,8 @@ export const PlaceForm: FC<PlaceFormProps> = ({
         withCloseButton={false}
         centered
       >
-        <div className="text-title-l text-info-400 mb-4 mt-2 flex items-center justify-center gap-2">
-          <Icon icon="ep:success-filled" className="text-info-400 h-6 w-6" />
+        <div className="mb-4 mt-2 flex items-center justify-center gap-2 text-title-l text-info-400">
+          <Icon icon="ep:success-filled" className="h-6 w-6 text-info-400" />
           {t('unpublish_success')}
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -402,7 +403,7 @@ export const PlaceForm: FC<PlaceFormProps> = ({
       >
         <GroupWrapper
           title={tPlace('category')}
-          className="bg-soap-100 rounded-3xl p-6"
+          className="rounded-3xl bg-soap-100 p-6"
           withAsterisk
         >
           <div className="flex flex-col gap-2">
@@ -422,7 +423,7 @@ export const PlaceForm: FC<PlaceFormProps> = ({
                         : 'disabled'
                     }
                     disabled={form.getInputProps('type').value}
-                    className="hover:border-magenta-500 cursor-pointer border-solid hover:border"
+                    className="cursor-pointer border-solid hover:border hover:border-magenta-500"
                     onClick={() => {
                       form.getInputProps('type').value === null
                         ? form.setFieldValue('type', element)
@@ -444,7 +445,7 @@ export const PlaceForm: FC<PlaceFormProps> = ({
         {form.getInputProps('type').value !== 'CURBCUT' && (
           <GroupWrapper
             title={tPlace('place_name')}
-            className="bg-soap-100 rounded-3xl p-6"
+            className="rounded-3xl bg-soap-100 p-6"
           >
             <div className="grid grid-cols-5 gap-6">
               <TextInput
@@ -476,7 +477,7 @@ export const PlaceForm: FC<PlaceFormProps> = ({
         )}
         <GroupWrapper
           title={tPlace('basic_information')}
-          className="bg-soap-100 rounded-3xl p-6"
+          className="rounded-3xl bg-soap-100 p-6"
         >
           <div className="grid grid-cols-2 gap-6">
             {form.getInputProps('type').value !== 'TRANSPORT' &&
@@ -576,7 +577,7 @@ export const PlaceForm: FC<PlaceFormProps> = ({
                 />
                 <GroupWrapper
                   title={tPlace('accessible_channel')}
-                  className="bg-french-vanilla-100 rounded-3xl p-6"
+                  className="rounded-3xl bg-french-vanilla-100 p-6"
                 >
                   <MultiSelect
                     data={busLineOptions.data}
@@ -758,8 +759,8 @@ export const PlaceForm: FC<PlaceFormProps> = ({
             >
               <div className="flex flex-col gap-6">
                 {removed && (
-                  <div className="text-title-l text-error-500 mt-2 flex items-center justify-center gap-2">
-                    <Icon icon="mdi:trash" className="text-error-500 h-6 w-6" />
+                  <div className="mt-2 flex items-center justify-center gap-2 text-title-l text-error-500">
+                    <Icon icon="mdi:trash" className="h-6 w-6 text-error-500" />
                     {t('remove_success')}
                   </div>
                 )}
@@ -774,7 +775,7 @@ export const PlaceForm: FC<PlaceFormProps> = ({
                 )}
                 {!removed && (
                   <div className="space-y-3">
-                    <div className="text-title-l py-2">
+                    <div className="py-2 text-title-l">
                       {t('remove_prompt')}
                     </div>
                     <div className="grid grid-cols-2 gap-4">

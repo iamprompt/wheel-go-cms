@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import { Image, Modal } from '@mantine/core'
 import { useTranslation } from 'react-i18next'
 
@@ -25,7 +26,7 @@ export function Tutorial({ opened, close }: any) {
       withCloseButton={false}
       size={1452}
     >
-      <div className="text-title-xl p-2">วิธีใช้งานระบบแดชบอร์ด</div>
+      <div className="p-2 text-title-xl">วิธีใช้งานระบบแดชบอร์ด</div>
       <div className="h-[480px] w-full">
         <Image
           alt="tutorial"

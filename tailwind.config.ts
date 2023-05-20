@@ -38,9 +38,7 @@ const getFontPresets = (styles: [string, number, string, number?][] = []) => {
 }
 
 const config: Config = {
-  content: [
-    `./src/**/*.{js,ts,jsx,tsx}`,
-  ],
+  content: [`./src/**/*.{js,ts,jsx,tsx}`],
   theme: {
     fontFamily: {
       sans: [

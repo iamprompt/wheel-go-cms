@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+
 import { Icon } from '@iconify/react'
-import { Modal, MultiSelect, NumberInput, Select, rem } from '@mantine/core'
+import { Modal, MultiSelect, NumberInput, rem, Select } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import {
-  rankItem,
   rankings,
+  rankItem,
   type RankingInfo,
 } from '@tanstack/match-sorter-utils'
 import {
@@ -271,8 +272,8 @@ export function BaseTable<T extends object>({
       >
         <div className="flex flex-col gap-6">
           {removed && (
-            <div className="text-title-l text-error-500 mt-2 flex items-center justify-center gap-2">
-              <Icon icon="mdi:trash" className="text-error-500 h-6 w-6" />
+            <div className="mt-2 flex items-center justify-center gap-2 text-title-l text-error-500">
+              <Icon icon="mdi:trash" className="h-6 w-6 text-error-500" />
               {t('remove_success')} (
               {table.getSelectedRowModel().flatRows.length})
             </div>
@@ -288,7 +289,7 @@ export function BaseTable<T extends object>({
                   {table.getSelectedRowModel().flatRows.map((row) => (
                     <div
                       key={row.id}
-                      className="border-error-500 bg-error-100 flex flex-col flex-wrap rounded-md border border-solid p-2"
+                      className="flex flex-col flex-wrap rounded-md border border-solid border-error-500 bg-error-100 p-2"
                     >
                       {router.asPath === '/place' && (
                         <table className="w-full table-fixed">
@@ -481,8 +482,8 @@ export function BaseTable<T extends object>({
         withCloseButton={false}
         centered
       >
-        <div className="text-title-l text-success-400 mb-4 mt-2 flex items-center justify-center gap-2">
-          <Icon icon="ep:success-filled" className="text-success-400 h-6 w-6" />
+        <div className="mb-4 mt-2 flex items-center justify-center gap-2 text-title-l text-success-400">
+          <Icon icon="ep:success-filled" className="h-6 w-6 text-success-400" />
           {t('export_success')}
         </div>
         <Button
@@ -527,7 +528,7 @@ export function BaseTable<T extends object>({
               <DebouncedInput
                 value={globalFilter ?? ''}
                 onChange={(value) => setGlobalFilter(String(value))}
-                className="border-french-vanilla-300 text-body-l text-magenta-600 placeholder:text-french-vanilla-400 focus:outline-magenta-500 w-full rounded-xl border border-solid py-3 pl-9 font-sans"
+                className="w-full rounded-xl border border-solid border-french-vanilla-300 py-3 pl-9 font-sans text-body-l text-magenta-600 placeholder:text-french-vanilla-400 focus:outline-magenta-500"
                 placeholder={`${t('search')}...`}
                 icon="ic:baseline-search"
                 iconClass="text-magenta-600 w-6 h-6"
@@ -555,14 +556,14 @@ export function BaseTable<T extends object>({
         </div>
       </div>
       <div className="relative overflow-x-auto">
-        <table className="border-french-vanilla-300 bg-french-vanilla-100 w-full table-fixed border-spacing-0 rounded-3xl border border-solid">
+        <table className="w-full table-fixed border-spacing-0 rounded-3xl border border-solid border-french-vanilla-300 bg-french-vanilla-100">
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
                   <th
                     key={header.id}
-                    className="text-title-s text-magenta-600 px-6 py-3"
+                    className="px-6 py-3 text-title-s text-magenta-600"
                     align={(header.column.columnDef.meta as any)?.align}
                     style={{
                       borderBottom: '1px solid #D4D4D4',
@@ -591,20 +592,20 @@ export function BaseTable<T extends object>({
                             asc: (
                               <Icon
                                 icon={'mdi:arrow-up-thin'}
-                                className="text-magenta-400 h-6 w-6"
+                                className="h-6 w-6 text-magenta-400"
                               />
                             ),
                             desc: (
                               <Icon
                                 icon={'mdi:arrow-down-thin'}
-                                className="text-magenta-400 h-6 w-6"
+                                className="h-6 w-6 text-magenta-400"
                               />
                             ),
                           }[header.column.getIsSorted() as string] ??
                             (header.column.getCanSort() ? (
                               <Icon
                                 icon={'ic:outline-swap-vert'}
-                                className="text-french-vanilla-400 h-6 w-6"
+                                className="h-6 w-6 text-french-vanilla-400"
                               />
                             ) : null)}
                         </div>
@@ -625,13 +626,13 @@ export function BaseTable<T extends object>({
               <tr
                 key={row.id}
                 className={cn(
-                  'hover:bg-soap-100 cursor-pointer',
+                  'cursor-pointer hover:bg-soap-100',
                   router.query.fid === row.original?.id ? 'bg-soap-100' : '',
                 )}
               >
                 {row.getVisibleCells().map((cell) => (
                   <td
-                    className="text-body-l text-magenta-600 overflow-hidden text-ellipsis whitespace-nowrap px-6 py-4"
+                    className="overflow-hidden text-ellipsis whitespace-nowrap px-6 py-4 text-body-l text-magenta-600"
                     key={cell.id}
                     align={(cell.column.columnDef.meta as any)?.align}
                     onClick={() =>
@@ -865,7 +866,7 @@ function DebouncedInput({
   return (
     <div className="relative flex items-center">
       {icon && (
-        <div className="placeholder:text-french-vanilla-400 absolute left-0 flex items-center pl-2">
+        <div className="absolute left-0 flex items-center pl-2 placeholder:text-french-vanilla-400">
           <Icon icon={icon} className={iconClass} />{' '}
         </div>
       )}

@@ -1,8 +1,10 @@
 // Utils-related imports
 
 // Types and constants
-import type { FC } from 'react'
+
 // UI-related imports
+import type { FC } from 'react'
+
 import { Icon } from '@iconify/react'
 import { useTranslation } from 'react-i18next'
 
@@ -43,7 +45,7 @@ const CreateAnnouncement: FC = () => {
         </a>
         <Icon
           icon="ic:round-arrow-forward-ios"
-          className="text-french-vanilla-500 h-6 w-6"
+          className="h-6 w-6 text-french-vanilla-500"
         />
         <div className="text-title-l text-magenta-500">{t('add')}</div>
       </div>

@@ -1,10 +1,11 @@
 import type { ReactNode } from 'react'
+
 import {
   ApolloClient,
   ApolloProvider,
+  from,
   InMemoryCache,
   Observable,
-  from,
   type FetchResult,
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'

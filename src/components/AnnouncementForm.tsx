@@ -1,4 +1,5 @@
 import { useEffect, useState, type FC } from 'react'
+
 import { Icon } from '@iconify/react'
 import {
   Group,
@@ -7,8 +8,8 @@ import {
   Select,
   Switch,
   Text,
-  TextInput,
   Textarea,
+  TextInput,
 } from '@mantine/core'
 import { Dropzone, IMAGE_MIME_TYPE, type FileWithPath } from '@mantine/dropzone'
 import { useForm } from '@mantine/form'
@@ -288,10 +289,10 @@ export const AnnouncementForm: FC<AnnouncementFormProps> = ({
             withCloseButton={false}
             centered
           >
-            <div className="text-title-l text-info-400 mb-4 mt-2 flex items-center justify-center gap-2">
+            <div className="mb-4 mt-2 flex items-center justify-center gap-2 text-title-l text-info-400">
               <Icon
                 icon="ep:success-filled"
-                className="text-info-400 h-6 w-6"
+                className="h-6 w-6 text-info-400"
               />
               {t('save_draft_success')}
             </div>
@@ -312,10 +313,10 @@ export const AnnouncementForm: FC<AnnouncementFormProps> = ({
             withCloseButton={false}
             centered
           >
-            <div className="text-title-l text-success-400 mb-4 mt-2 flex items-center justify-center gap-2">
+            <div className="mb-4 mt-2 flex items-center justify-center gap-2 text-title-l text-success-400">
               <Icon
                 icon="ep:success-filled"
-                className="text-success-400 h-6 w-6"
+                className="h-6 w-6 text-success-400"
               />
               {t('publish_success')}
             </div>
@@ -336,10 +337,10 @@ export const AnnouncementForm: FC<AnnouncementFormProps> = ({
             withCloseButton={false}
             centered
           >
-            <div className="text-title-l text-success-400 mb-4 mt-2 flex items-center justify-center gap-2">
+            <div className="mb-4 mt-2 flex items-center justify-center gap-2 text-title-l text-success-400">
               <Icon
                 icon="ep:success-filled"
-                className="text-success-400 h-6 w-6"
+                className="h-6 w-6 text-success-400"
               />
               {t('save_success')}
             </div>
@@ -366,10 +367,10 @@ export const AnnouncementForm: FC<AnnouncementFormProps> = ({
             withCloseButton={false}
             centered
           >
-            <div className="text-title-l text-info-400 mb-4 mt-2 flex items-center justify-center gap-2">
+            <div className="mb-4 mt-2 flex items-center justify-center gap-2 text-title-l text-info-400">
               <Icon
                 icon="ep:success-filled"
-                className="text-info-400 h-6 w-6"
+                className="h-6 w-6 text-info-400"
               />
               {t('unpublish_success')}
             </div>
@@ -439,7 +440,7 @@ export const AnnouncementForm: FC<AnnouncementFormProps> = ({
           >
             <GroupWrapper
               title={tAnnounce('topic')}
-              className="bg-soap-100 rounded-3xl p-6"
+              className="rounded-3xl bg-soap-100 p-6"
             >
               <div className="grid grid-cols-2 gap-6">
                 <TextInput
@@ -460,7 +461,7 @@ export const AnnouncementForm: FC<AnnouncementFormProps> = ({
             </GroupWrapper>
             <GroupWrapper
               title={tAnnounce('details')}
-              className="bg-soap-100 rounded-3xl p-6"
+              className="rounded-3xl bg-soap-100 p-6"
             >
               <div className="grid grid-cols-2 gap-4">
                 <div className="grid grid-cols-2 gap-6">
@@ -688,10 +689,10 @@ export const AnnouncementForm: FC<AnnouncementFormProps> = ({
                 >
                   <div className="flex flex-col gap-6">
                     {removed && (
-                      <div className="text-title-l text-error-500 mt-2 flex items-center justify-center gap-2">
+                      <div className="mt-2 flex items-center justify-center gap-2 text-title-l text-error-500">
                         <Icon
                           icon="mdi:trash"
-                          className="text-error-500 h-6 w-6"
+                          className="h-6 w-6 text-error-500"
                         />
                         {t('remove_success')}
                       </div>
@@ -707,7 +708,7 @@ export const AnnouncementForm: FC<AnnouncementFormProps> = ({
                     )}
                     {!removed && (
                       <div className="space-y-3">
-                        <div className="text-title-l py-2">
+                        <div className="py-2 text-title-l">
                           {t('remove_prompt')}
                         </div>
                         <div className="grid grid-cols-2 gap-4">

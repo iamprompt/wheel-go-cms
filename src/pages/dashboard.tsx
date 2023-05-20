@@ -1,4 +1,5 @@
 import { useState, type FC } from 'react'
+
 import { GoogleMap, Polyline } from '@react-google-maps/api'
 import { useTranslation } from 'react-i18next'
 
@@ -80,7 +81,7 @@ const Dashboard: FC = () => {
 
   return (
     <div>
-      <div className="text-title-xl text-magenta-600 mb-6">
+      <div className="mb-6 text-title-xl text-magenta-600">
         {t('dashboard')}
       </div>
       <div className="flex flex-col gap-6">
@@ -92,23 +93,23 @@ const Dashboard: FC = () => {
         </div>
         <div className="grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
           <StatisticsCard {...totalUsers}>
-            <div className="text-magenta-600 flex justify-between gap-x-6">
+            <div className="flex justify-between gap-x-6 text-magenta-600">
               <div className="text-title-m">{t('impairment_level.title')}</div>
               <div className="text-title-m">{t('impairment_amount')}</div>
             </div>
             {impairmentLevel.map(({ key, value }) => (
               <div
                 key={key}
-                className="text-magenta-600 flex justify-between gap-6"
+                className="flex justify-between gap-6 text-magenta-600"
               >
                 <div className="text-body-m">{key}</div>
                 <div className="text-body-m">{value}</div>
               </div>
             ))}
           </StatisticsCard>
-          <div className="border-french-vanilla-300 col-span-2 flex grow flex-col overflow-hidden rounded-3xl border border-solid">
+          <div className="col-span-2 flex grow flex-col overflow-hidden rounded-3xl border border-solid border-french-vanilla-300">
             {/* <button onClick={() => console.log(selectedPlace)}>c</button> */}
-            <div className="text-title-xl text-magenta-600 p-4">
+            <div className="p-4 text-title-xl text-magenta-600">
               {t('accessible_areas')}
               {selectedPlace
                 ? isEN

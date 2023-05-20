@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+
 import { Icon } from '@iconify/react'
 import { Image, Modal, Switch, Textarea } from '@mantine/core'
 import { useForm } from '@mantine/form'
@@ -102,7 +103,7 @@ export function ReviewDetails() {
           title={
             isEN ? review.place?.name?.en ?? '' : review.place?.name?.th ?? ''
           }
-          className="bg-soap-100 items-start rounded-3xl p-6"
+          className="items-start rounded-3xl bg-soap-100 p-6"
         >
           <Modal
             opened={updateOpened}
@@ -110,10 +111,10 @@ export function ReviewDetails() {
             withCloseButton={false}
             centered
           >
-            <div className="text-title-l text-success-400 mb-4 mt-2 flex items-center justify-center gap-2">
+            <div className="mb-4 mt-2 flex items-center justify-center gap-2 text-title-l text-success-400">
               <Icon
                 icon="ep:success-filled"
-                className="text-success-400 h-6 w-6"
+                className="h-6 w-6 text-success-400"
               />
               {t('save_success')}
             </div>
@@ -142,8 +143,8 @@ export function ReviewDetails() {
           >
             <div className="flex flex-col gap-6">
               {removed && (
-                <div className="text-title-l text-error-500 mt-2 flex items-center justify-center gap-2">
-                  <Icon icon="mdi:trash" className="text-error-500 h-6 w-6" />
+                <div className="mt-2 flex items-center justify-center gap-2 text-title-l text-error-500">
+                  <Icon icon="mdi:trash" className="h-6 w-6 text-error-500" />
                   {t('remove_success')}
                 </div>
               )}
@@ -158,7 +159,7 @@ export function ReviewDetails() {
               )}
               {!removed && (
                 <div className="space-y-3">
-                  <div className="text-title-l py-2">{t('remove_prompt')}</div>
+                  <div className="py-2 text-title-l">{t('remove_prompt')}</div>
                   <div className="grid grid-cols-2 gap-4">
                     <Button
                       type="button"
@@ -222,7 +223,7 @@ export function ReviewDetails() {
                 icon="ic:round-star"
                 iconPosition="right"
                 iconColor="text-warning-400"
-                className=" text-title-xl border-solid"
+                className=" border-solid text-title-xl"
                 state="available"
                 color="magenta"
               />
@@ -246,7 +247,7 @@ export function ReviewDetails() {
                       icon={Facilities[element].icon}
                       iconColor="text-magenta-500"
                       state="available"
-                      className="!text-magenta-500 border-solid"
+                      className="border-solid !text-magenta-500"
                     />
                   )
                 })}
@@ -260,7 +261,7 @@ export function ReviewDetails() {
                     key={item}
                     label={tReview(item)}
                     state="available"
-                    className="!text-body-m !text-magenta-500 border-solid"
+                    className="border-solid !text-body-m !text-magenta-500"
                   />
                 ))}
               </div>

@@ -1,7 +1,8 @@
 import { useEffect, useState, type FC } from 'react'
 import { useRouter } from 'next/router'
+
 import { Icon } from '@iconify/react'
-import { Modal, NumberInput, Switch, TextInput, Textarea } from '@mantine/core'
+import { Modal, NumberInput, Switch, Textarea, TextInput } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { GoogleMap, MarkerF } from '@react-google-maps/api'
 import { useTranslation } from 'react-i18next'
@@ -292,8 +293,8 @@ export const FacilitiesInfo: FC<FacilitiesInfoProps> = ({ placeId }) => {
         withCloseButton={false}
         centered
       >
-        <div className="text-title-l text-success-400 mb-4 mt-2 flex items-center justify-center gap-2">
-          <Icon icon="ep:success-filled" className="text-success-400 h-6 w-6" />
+        <div className="mb-4 mt-2 flex items-center justify-center gap-2 text-title-l text-success-400">
+          <Icon icon="ep:success-filled" className="h-6 w-6 text-success-400" />
           {tTable('added')}
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -316,8 +317,8 @@ export const FacilitiesInfo: FC<FacilitiesInfoProps> = ({ placeId }) => {
         withCloseButton={false}
         centered
       >
-        <div className="text-title-l text-success-400 mb-4 mt-2 flex items-center justify-center gap-2">
-          <Icon icon="ep:success-filled" className="text-success-400 h-6 w-6" />
+        <div className="mb-4 mt-2 flex items-center justify-center gap-2 text-title-l text-success-400">
+          <Icon icon="ep:success-filled" className="h-6 w-6 text-success-400" />
           {tTable('save_success')}
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -337,8 +338,8 @@ export const FacilitiesInfo: FC<FacilitiesInfoProps> = ({ placeId }) => {
       >
         <div className="flex flex-col gap-6">
           {removed && (
-            <div className="text-title-l text-error-500 mt-2 flex items-center justify-center gap-2">
-              <Icon icon="mdi:trash" className="text-error-500 h-6 w-6" />
+            <div className="mt-2 flex items-center justify-center gap-2 text-title-l text-error-500">
+              <Icon icon="mdi:trash" className="h-6 w-6 text-error-500" />
               {tTable('remove_success')}
             </div>
           )}
@@ -352,7 +353,7 @@ export const FacilitiesInfo: FC<FacilitiesInfoProps> = ({ placeId }) => {
           )}
           {!removed && (
             <div className="space-y-3">
-              <div className="text-title-l py-2">{tTable('remove_prompt')}</div>
+              <div className="py-2 text-title-l">{tTable('remove_prompt')}</div>
               <div className="grid grid-cols-2 gap-4">
                 <Button
                   type="button"
@@ -380,13 +381,13 @@ export const FacilitiesInfo: FC<FacilitiesInfoProps> = ({ placeId }) => {
         <GroupWrapper
           title={t('info')}
           description={t('details') as string}
-          className="bg-soap-100 rounded-3xl p-6"
+          className="rounded-3xl bg-soap-100 p-6"
         >
           <div className="grid grid-cols-2 gap-6">
             <FacilitiesTable data={data.getFacilitiesByPlaceId} />
             <GroupWrapper
               title="Facility"
-              className="bg-french-vanilla-100 h-fit gap-6 rounded-3xl p-6"
+              className="h-fit gap-6 rounded-3xl bg-french-vanilla-100 p-6"
             >
               <div className="mt-2 flex flex-wrap gap-4">
                 {Object.keys(Facilities).map((element) => {
@@ -405,7 +406,7 @@ export const FacilitiesInfo: FC<FacilitiesInfoProps> = ({ placeId }) => {
                           : 'disabled'
                       }
                       disabled={id !== undefined}
-                      className="hover:border-magenta-500 cursor-pointer border-solid hover:border"
+                      className="cursor-pointer border-solid hover:border hover:border-magenta-500"
                       onClick={() => {
                         setType(item)
                         setDetailEN('')

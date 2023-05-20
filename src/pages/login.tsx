@@ -1,5 +1,6 @@
 import type { FC } from 'react'
 import Image from 'next/image'
+
 import { PasswordInput, TextInput } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useTranslation } from 'react-i18next'
@@ -87,7 +88,7 @@ const Login: FC = () => {
           </div>
         </form>
       </div>
-      <div className="bg-magenta-600 flex justify-center overflow-hidden">
+      <div className="flex justify-center overflow-hidden bg-magenta-600">
         <Image
           priority
           src="/images/wheelchair.svg"

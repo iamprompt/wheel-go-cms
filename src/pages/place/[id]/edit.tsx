@@ -1,5 +1,6 @@
 import type { FC } from 'react'
 import { useRouter } from 'next/router'
+
 import { Icon } from '@iconify/react'
 import cloneDeep from 'lodash.clonedeep'
 import omit from 'lodash.omit'
@@ -34,7 +35,7 @@ const AddPlace: FC = () => {
         </a>
         <Icon
           icon="ic:round-arrow-forward-ios"
-          className="text-french-vanilla-500 h-6 w-6"
+          className="h-6 w-6 text-french-vanilla-500"
         />
         <div className="text-title-l text-magenta-500">{t('edit')}</div>
       </div>

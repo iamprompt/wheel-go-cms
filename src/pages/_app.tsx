@@ -2,6 +2,7 @@ import '~/styles/globals.css'
 import '~/utils/i18n'
 import '~/utils/dayjs'
 import type { AppProps } from 'next/app'
+
 import { MantineProvider } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { LoadScript } from '@react-google-maps/api'

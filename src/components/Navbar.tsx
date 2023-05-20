@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+
 import i18next from 'i18next'
 import { useTranslation } from 'react-i18next'
 
@@ -29,7 +30,7 @@ export function Navbar() {
   ]
 
   return (
-    <nav className="bg-french-vanilla-100 text-title-m fixed z-10 flex w-full items-center justify-between gap-6 p-6 shadow-md">
+    <nav className="fixed z-10 flex w-full items-center justify-between gap-6 bg-french-vanilla-100 p-6 text-title-m shadow-md">
       <a href={links[0]?.href ?? '#'}>
         <Image
           priority
@@ -48,7 +49,7 @@ export function Navbar() {
               className={
                 router.asPath === href
                   ? 'text-magenta-400 no-underline'
-                  : 'text-french-vanilla-500 hover:text-magenta-600 no-underline'
+                  : 'text-french-vanilla-500 no-underline hover:text-magenta-600'
               }
             >
               {name}
@@ -66,7 +67,7 @@ export function Navbar() {
             cursorPointer
           />
         </a>
-        <div className="text-title-m flex items-center">
+        <div className="flex items-center text-title-m">
           <Button
             appearance="none"
             label="EN"
@@ -78,7 +79,7 @@ export function Navbar() {
             }
             onClick={() => i18next.changeLanguage('en')}
           />
-          <span className="text-french-vanilla-500 font-normal">|</span>
+          <span className="font-normal text-french-vanilla-500">|</span>
           <Button
             appearance="none"
             label="ภาษาไทย"
