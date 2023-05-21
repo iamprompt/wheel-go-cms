@@ -1,4 +1,9 @@
 {
-  "extends": ["next", "plugin:prettier/recommended"],
-  "ignorePatterns": ["generated-types.ts"]
+  "extends": ["next", "@antfu", "plugin:prettier/recommended"],
+  "ignorePatterns": ["generated-types.ts"],
+  "rules": {
+    "import/order": "off",
+    "no-console": "off",
+    "sort-imports": "off"
+  }
 }
